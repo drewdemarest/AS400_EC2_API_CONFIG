@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MySQLInputWidget</class>
+ <widget class="QWidget" name="MySQLInputWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>682</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="7" column="0">
+    <widget class="QCheckBox" name="sslCheckBox">
+     <property name="text">
+      <string>Connect with SSL</string>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="0">
+    <widget class="QPushButton" name="caFileBrowseButton">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="text">
+      <string>Browse for CA File</string>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="0">
+    <widget class="QLineEdit" name="caFileLineEdit">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="0">
+    <widget class="QLabel" name="caFileLabel">
+     <property name="text">
+      <string>CA File</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0">
+    <widget class="QLabel" name="passwordLabel">
+     <property name="text">
+      <string>MySQL Password</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLineEdit" name="usernameLineEdit">
+     <property name="text">
+      <string>Input username here</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="usernameLabel">
+     <property name="text">
+      <string>MySQL Username</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLineEdit" name="hostnameLineEdit">
+     <property name="text">
+      <string>Input IP or hostname here</string>
+     </property>
+    </widget>
+   </item>
+   <item row="11" column="0">
+    <widget class="QLabel" name="clientKeyLabel">
+     <property name="text">
+      <string>Client Key File</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="hostnameLabel">
+     <property name="text">
+      <string>MySQL Hostname or IP</string>
+     </property>
+    </widget>
+   </item>
+   <item row="16" column="0">
+    <widget class="QPushButton" name="clientCertBrowseButton">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="text">
+      <string>Browse for Client Cert File</string>
+     </property>
+    </widget>
+   </item>
+   <item row="15" column="0">
+    <widget class="QLineEdit" name="clientCertLineEdit">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="17" column="0">
+    <widget class="QPushButton" name="commitSettingsButton">
+     <property name="text">
+      <string>Commit Settings</string>
+     </property>
+    </widget>
+   </item>
+   <item row="14" column="0">
+    <widget class="QLabel" name="clientCertLabel">
+     <property name="text">
+      <string>Client Cert File</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0">
+    <widget class="QLineEdit" name="passwordLineEdit">
+     <property name="text">
+      <string>password</string>
+     </property>
+     <property name="echoMode">
+      <enum>QLineEdit::Password</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="13" column="0">
+    <widget class="QPushButton" name="clientKeyBrowseButton">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="text">
+      <string>Browse for Client Key File</string>
+     </property>
+    </widget>
+   </item>
+   <item row="12" column="0">
+    <widget class="QLineEdit" name="clientKeyLineEdit">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QPushButton" name="loadSettingsButton">
+     <property name="text">
+      <string>Load Existing Settings</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>loadSettingsButton</tabstop>
+  <tabstop>hostnameLineEdit</tabstop>
+  <tabstop>usernameLineEdit</tabstop>
+  <tabstop>passwordLineEdit</tabstop>
+  <tabstop>sslCheckBox</tabstop>
+  <tabstop>caFileLineEdit</tabstop>
+  <tabstop>caFileBrowseButton</tabstop>
+  <tabstop>clientKeyLineEdit</tabstop>
+  <tabstop>clientKeyBrowseButton</tabstop>
+  <tabstop>clientCertLineEdit</tabstop>
+  <tabstop>clientCertBrowseButton</tabstop>
+  <tabstop>commitSettingsButton</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
