@@ -9,6 +9,10 @@ MySQLInputWidget::MySQLInputWidget(QWidget *parent) :
     connect(ui->sslCheckBox, &QCheckBox::toggled, this, &MySQLInputWidget::sslCheckBoxChanged);
     connect(ui->commitSettingsButton, &QPushButton::pressed, this, &MySQLInputWidget::saveSettings);
     connect(ui->loadSettingsButton, &QPushButton::pressed, this, &MySQLInputWidget::loadSettings);
+    connect(ui->caFileBrowseButton, &QPushButton::pressed, this, &MySQLInputWidget::browseForCA);
+    connect(ui->clientCertBrowseButton, &QPushButton::pressed, this, &MySQLInputWidget::browseForClientCert);
+    connect(ui->clientKeyBrowseButton, &QPushButton::pressed, this, &MySQLInputWidget::browseForClientKey);
+
 }
 
 MySQLInputWidget::~MySQLInputWidget()
@@ -50,4 +54,20 @@ void MySQLInputWidget::loadSettings()
     ui->caFileLineEdit->setText(mySQLSettings_["caStr"].toString());
     ui->clientKeyLineEdit->setText(mySQLSettings_["clientKeyStr"].toString());
     ui->clientCertLineEdit->setText(mySQLSettings_["clientCertStr"].toString());
+}
+
+void MySQLInputWidget::browseForCA()
+{
+    ui->caFileLineEdit->setText(QFileDialog::getOpenFileName(this, tr("Select the CA File"), qApp->applicationDirPath(),"Key files (*.key *.pem)"));
+}
+
+void MySQLInputWidget::browseForClientKey()
+{
+    ui->clientKeyLineEdit->setText(QFileDialog::getOpenFileName(this, tr("Select the Client Cert"), qApp->applicationDirPath(),"Key files (*.key *.pem)"));
+}
+
+
+void MySQLInputWidget::browseForClientCert()
+{
+    ui->clientCertLineEdit->setText(QFileDialog::getOpenFileName(this, tr("Select the Client Key"), qApp->applicationDirPath(),"Key files (*.key *.pem)"));
 }

@@ -14,14 +14,14 @@
    <string>Form</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="2" column="1">
+   <item row="3" column="1">
     <widget class="QCheckBox" name="importDailyCheckBox">
      <property name="text">
       <string>Import daily at this time</string>
      </property>
     </widget>
    </item>
-   <item row="1" column="0" colspan="2">
+   <item row="2" column="0" colspan="2">
     <widget class="QSpinBox" name="chunkSizeSpinBox">
      <property name="minimum">
       <number>1</number>
@@ -34,7 +34,7 @@
      </property>
     </widget>
    </item>
-   <item row="3" column="0">
+   <item row="4" column="0">
     <widget class="QSpinBox" name="importIntervalSpinBox">
      <property name="minimum">
       <number>1</number>
@@ -47,31 +47,38 @@
      </property>
     </widget>
    </item>
-   <item row="0" column="0" colspan="2">
+   <item row="1" column="0" colspan="2">
     <widget class="QLabel" name="chunkSizeLabel">
      <property name="text">
       <string>Chunk Size</string>
      </property>
     </widget>
    </item>
-   <item row="3" column="1">
+   <item row="4" column="1">
     <widget class="QTimeEdit" name="importTimeEdit">
      <property name="displayFormat">
       <string>hh:mm</string>
      </property>
     </widget>
    </item>
-   <item row="2" column="0">
+   <item row="3" column="0">
     <widget class="QCheckBox" name="importIntervalCheckBox">
      <property name="text">
       <string>Import on millisecond intervals</string>
      </property>
     </widget>
    </item>
-   <item row="4" column="0" colspan="2">
-    <widget class="QPushButton" name="pushButton">
+   <item row="5" column="0" colspan="2">
+    <widget class="QPushButton" name="commitSettingsButton">
      <property name="text">
       <string>Commit Settings</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0" colspan="2">
+    <widget class="QPushButton" name="loadtExistingSettingsButton">
+     <property name="text">
+      <string>Load Existing Settings</string>
      </property>
     </widget>
    </item>

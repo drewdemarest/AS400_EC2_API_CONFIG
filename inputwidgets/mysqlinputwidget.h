@@ -2,6 +2,7 @@
 #define MYSQLINPUTWIDGET_H
 
 #include "json_settings/jsonsettings.h"
+#include <QFileDialog>
 #include <QWidget>
 
 namespace Ui {
@@ -20,6 +21,9 @@ private slots:
     void sslCheckBoxChanged(bool checked);
     void saveSettings();
     void loadSettings();
+    void browseForCA();
+    void browseForClientKey();
+    void browseForClientCert();
 
 private:
     Ui::MySQLInputWidget *ui;
@@ -34,5 +38,6 @@ private:
                                      {"userName",        QJsonValue()},
                                      {"password",        QJsonValue()}};
 };
+
 
 #endif // MYSQLINPUTWIDGET_H

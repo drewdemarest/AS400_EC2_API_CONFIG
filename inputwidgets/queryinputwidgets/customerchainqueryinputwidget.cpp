@@ -63,3 +63,13 @@ void CustomerChainQueryInputWidget::intervalImportCheckChanged(bool checked)
     }
 }
 
+void CustomerChainQueryInputWidget::saveSettings()
+{
+
+}
+
+void CustomerChainQueryInputWidget::loadSettings()
+{
+
+}
+
