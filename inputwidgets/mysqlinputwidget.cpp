@@ -35,7 +35,7 @@ void MySQLInputWidget::saveSettings()
     mySQLSettings_["password"] =        ui->passwordLineEdit->text();
     mySQLSettings_["userName"] =        ui->usernameLineEdit->text();
     mySQLSettings_["usingSSL"] =        ui->sslCheckBox->isChecked();
-    //mySQLSettings_["databaseName"] = databaseName;
+    mySQLSettings_["databaseName"] =    ui->databaseNameLineEdit->text();
     mySQLSettings_["hostName"] =        ui->hostnameLineEdit->text();
     mySQLSettings_["caStr"] =           ui->caFileLineEdit->text();
     mySQLSettings_["clientKeyStr"] =    ui->clientKeyLineEdit->text();
@@ -48,7 +48,7 @@ void MySQLInputWidget::loadSettings()
     mySQLSettings_ = settings_.loadSettings(QFile(dbPath_), mySQLSettings_);
     ui->passwordLineEdit->setText(mySQLSettings_["password"].toString());
     ui->usernameLineEdit->setText(mySQLSettings_["userName"].toString());
-    //mySQLSettings_["databaseName"] = databaseName;
+    ui->databaseNameLineEdit->setText(mySQLSettings_["databaseName"].toString());
     ui->sslCheckBox->setChecked(mySQLSettings_["usingSSL"].toString().toInt());
     ui->hostnameLineEdit->setText(mySQLSettings_["hostName"].toString());
     ui->caFileLineEdit->setText(mySQLSettings_["caStr"].toString());
