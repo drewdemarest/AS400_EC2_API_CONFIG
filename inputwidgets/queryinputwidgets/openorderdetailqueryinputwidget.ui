@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>CustomerChainQueryInputWidget</class>
- <widget class="QWidget" name="CustomerChainQueryInputWidget">
+ <class>OpenOrderDetailQueryInputWidget</class>
+ <widget class="QWidget" name="OpenOrderDetailQueryInputWidget">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -14,13 +14,17 @@
    <string>Form</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="3" column="1">
-    <widget class="QCheckBox" name="importDailyCheckBox">
-     <property name="enabled">
-      <bool>false</bool>
-     </property>
+   <item row="0" column="0" colspan="2">
+    <widget class="QPushButton" name="loadExistingSettingsButton">
      <property name="text">
-      <string>Import daily at this time</string>
+      <string>Load Existing Settings</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0" colspan="2">
+    <widget class="QLabel" name="chunkSizeLabel">
+     <property name="text">
+      <string>Chunk Size</string>
      </property>
     </widget>
    </item>
@@ -40,6 +44,26 @@
      </property>
     </widget>
    </item>
+   <item row="3" column="0">
+    <widget class="QCheckBox" name="importIntervalCheckBox">
+     <property name="text">
+      <string>Import on millisecond intervals</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QCheckBox" name="importDailyCheckBox">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="text">
+      <string>Import daily at this time</string>
+     </property>
+    </widget>
+   </item>
    <item row="4" column="0">
     <widget class="QSpinBox" name="importIntervalSpinBox">
      <property name="minimum">
@@ -56,13 +80,6 @@
      </property>
     </widget>
    </item>
-   <item row="1" column="0" colspan="2">
-    <widget class="QLabel" name="chunkSizeLabel">
-     <property name="text">
-      <string>Chunk Size</string>
-     </property>
-    </widget>
-   </item>
    <item row="4" column="1">
     <widget class="QTimeEdit" name="importTimeEdit">
      <property name="enabled">
@@ -70,30 +87,6 @@
      </property>
      <property name="displayFormat">
       <string>hh:mm</string>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="0">
-    <widget class="QCheckBox" name="importIntervalCheckBox">
-     <property name="text">
-      <string>Import on millisecond intervals</string>
-     </property>
-     <property name="checked">
-      <bool>true</bool>
-     </property>
-    </widget>
-   </item>
-   <item row="6" column="0" colspan="2">
-    <widget class="QPushButton" name="commitSettingsButton">
-     <property name="text">
-      <string>Commit Settings</string>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="0" colspan="2">
-    <widget class="QPushButton" name="loadExistingSettingsButton">
-     <property name="text">
-      <string>Load Existing Settings</string>
      </property>
     </widget>
    </item>
@@ -105,10 +98,17 @@
      <property name="sizeHint" stdset="0">
       <size>
        <width>20</width>
-       <height>40</height>
+       <height>123</height>
       </size>
      </property>
     </spacer>
+   </item>
+   <item row="6" column="0" colspan="2">
+    <widget class="QPushButton" name="commitSettingsButton">
+     <property name="text">
+      <string>Commit Settings</string>
+     </property>
+    </widget>
    </item>
   </layout>
  </widget>

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>485</width>
+    <height>389</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,6 +18,9 @@
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
       <number>0</number>
+     </property>
+     <property name="tabBarAutoHide">
+      <bool>false</bool>
      </property>
      <widget class="QWidget" name="invoiceSettingsTab">
       <attribute name="title">
@@ -36,6 +39,26 @@
       <layout class="QGridLayout" name="gridLayout_4">
        <item row="0" column="0">
         <layout class="QGridLayout" name="customerChainSettingsGrid"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="openOrderHeaderSettingsTab">
+      <attribute name="title">
+       <string>Open Order Headers</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_6">
+       <item row="0" column="0">
+        <layout class="QGridLayout" name="openOrderHeaderSettingsGrid"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="openOrderDetailSettingsTab">
+      <attribute name="title">
+       <string>Open Order Detail</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_5">
+       <item row="0" column="0">
+        <layout class="QGridLayout" name="openOrderDetailSettingsGrid"/>
        </item>
       </layout>
      </widget>

@@ -67,24 +67,24 @@ void InvoiceQueryInputWidget::intervalImportCheckChanged(bool checked)
 
 void InvoiceQueryInputWidget::saveSettings()
 {
-    invoiceQuerySettings_["millisecondInterval"] = QString::number(ui->importIntervalSpinBox->value());
-    invoiceQuerySettings_["dailyUploadTime"] = ui->importTimeEdit->time().toString(Qt::ISODate);
-    invoiceQuerySettings_["invoiceDaysPrior"] = QString::number(ui->daysPrevSpinBox->value());
-    invoiceQuerySettings_["chunkSize"] = QString::number(ui->chunkSizeSpinBox->value());
-    invoiceQuerySettings_["usingUploadInterval"] = ui->importIntervalCheckBox->isChecked();
-    invoiceQuerySettings_["usingUploadDaily"] = ui->importDailyCheckBox->isChecked();
+    querySettings_["millisecondInterval"] = QString::number(ui->importIntervalSpinBox->value());
+    querySettings_["dailyUploadTime"] = ui->importTimeEdit->time().toString(Qt::ISODate);
+    querySettings_["invoiceDaysPrior"] = QString::number(ui->daysPrevSpinBox->value());
+    querySettings_["chunkSize"] = QString::number(ui->chunkSizeSpinBox->value());
+    querySettings_["usingUploadInterval"] = ui->importIntervalCheckBox->isChecked();
+    querySettings_["usingUploadDaily"] = ui->importDailyCheckBox->isChecked();
 
-    settings_.saveSettings(QFile(dbPath_), invoiceQuerySettings_);
+    settings_.saveSettings(QFile(dbPath_), querySettings_);
 }
 
 void InvoiceQueryInputWidget::loadSettings()
 {
-    invoiceQuerySettings_ = settings_.loadSettings(QFile(dbPath_), invoiceQuerySettings_);
+    querySettings_ = settings_.loadSettings(QFile(dbPath_), querySettings_);
 
-    ui->importIntervalSpinBox->setValue(invoiceQuerySettings_["millisecondInterval"].toString().toInt());
-    ui->importTimeEdit->setTime(QTime::fromString(invoiceQuerySettings_["dailyUploadTime"].toString(), Qt::ISODate));
-    ui->daysPrevSpinBox->setValue(invoiceQuerySettings_["invoiceDaysPrior"].toString().toInt());
-    ui->chunkSizeSpinBox->setValue(invoiceQuerySettings_["chunkSize"].toString().toInt());
-    ui->importIntervalCheckBox->setChecked(invoiceQuerySettings_["usingUploadInterval"].toString().toInt());
-    ui->importDailyCheckBox->setChecked(invoiceQuerySettings_["usingUploadDaily"].toString().toInt());
+    ui->importIntervalSpinBox->setValue(querySettings_["millisecondInterval"].toString().toInt());
+    ui->importTimeEdit->setTime(QTime::fromString(querySettings_["dailyUploadTime"].toString(), Qt::ISODate));
+    ui->daysPrevSpinBox->setValue(querySettings_["invoiceDaysPrior"].toString().toInt());
+    ui->chunkSizeSpinBox->setValue(querySettings_["chunkSize"].toString().toInt());
+    ui->importIntervalCheckBox->setChecked(querySettings_["usingUploadInterval"].toString().toInt());
+    ui->importDailyCheckBox->setChecked(querySettings_["usingUploadDaily"].toString().toInt());
 }

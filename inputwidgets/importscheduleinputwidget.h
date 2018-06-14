@@ -4,6 +4,9 @@
 #include <QWidget>
 #include "queryinputwidgets/invoicequeryinputwidget.h"
 #include "queryinputwidgets/customerchainqueryinputwidget.h"
+#include "queryinputwidgets/openorderheaderqueryinputwidget.h"
+#include "queryinputwidgets/openorderdetailqueryinputwidget.h"
+
 
 namespace Ui {
 class ImportScheduleInputWidget;
@@ -21,7 +24,8 @@ private:
     Ui::ImportScheduleInputWidget *ui;
     InvoiceQueryInputWidget *invoiceInput = new InvoiceQueryInputWidget(this);
     CustomerChainQueryInputWidget *customerChainInput = new CustomerChainQueryInputWidget(this);
-
+    OpenOrderHeaderQueryInputWidget *openOrderHeaderInput = new OpenOrderHeaderQueryInputWidget(this);
+    OpenOrderDetailQueryInputWidget *openOrderDetailInput = new OpenOrderDetailQueryInputWidget(this);
 };
 
 #endif // IMPORTSCHEDULEINPUTWIDGET_H

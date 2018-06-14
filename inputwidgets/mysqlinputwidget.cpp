@@ -12,7 +12,6 @@ MySQLInputWidget::MySQLInputWidget(QWidget *parent) :
     connect(ui->caFileBrowseButton, &QPushButton::pressed, this, &MySQLInputWidget::browseForCA);
     connect(ui->clientCertBrowseButton, &QPushButton::pressed, this, &MySQLInputWidget::browseForClientCert);
     connect(ui->clientKeyBrowseButton, &QPushButton::pressed, this, &MySQLInputWidget::browseForClientKey);
-
 }
 
 MySQLInputWidget::~MySQLInputWidget()
@@ -65,7 +64,6 @@ void MySQLInputWidget::browseForClientKey()
 {
     ui->clientKeyLineEdit->setText(QFileDialog::getOpenFileName(this, tr("Select the Client Cert"), qApp->applicationDirPath(),"Key files (*.key *.pem)"));
 }
-
 
 void MySQLInputWidget::browseForClientCert()
 {

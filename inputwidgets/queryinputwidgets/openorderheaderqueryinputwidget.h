@@ -1,20 +1,20 @@
-#ifndef INVOICEQUERYINPUTWIDGET_H
-#define INVOICEQUERYINPUTWIDGET_H
+#ifndef OPENORDERHEADERQUERYINPUTWIDGET_H
+#define OPENORDERHEADERQUERYINPUTWIDGET_H
 
 #include "json_settings/jsonsettings.h"
 #include <QWidget>
 
 namespace Ui {
-class InvoiceQueryInputWidget;
+class OpenOrderHeaderQueryInputWidget;
 }
 
-class InvoiceQueryInputWidget : public QWidget
+class OpenOrderHeaderQueryInputWidget : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit InvoiceQueryInputWidget(QWidget *parent = 0);
-    ~InvoiceQueryInputWidget();
+    explicit OpenOrderHeaderQueryInputWidget(QWidget *parent = 0);
+    ~OpenOrderHeaderQueryInputWidget();
 
 private slots:
     void dailyTimeImportCheckChanged(bool checked);
@@ -23,16 +23,15 @@ private slots:
     void loadSettings();
 
 private:
-    Ui::InvoiceQueryInputWidget *ui;
+    Ui::OpenOrderHeaderQueryInputWidget *ui;
     JsonSettings settings_;
 
-    QString dbPath_ = qApp->applicationDirPath() + "/invoiceQuery.db";
+    QString dbPath_ = qApp->applicationDirPath() + "/openOrderHeaderQuery.db";
     QJsonObject querySettings_ =   {{"millisecondInterval",    QJsonValue()},
                                     {"dailyUploadTime",         QJsonValue()},
-                                    {"invoiceDaysPrior",        QJsonValue()},
                                     {"chunkSize",               QJsonValue()},
                                     {"usingUploadInterval",     QJsonValue()},
                                     {"usingUploadDaily",        QJsonValue()}};
 };
 
-#endif // INVOICEQUERYINPUTWIDGET_H
+#endif // OPENORDERHEADERQUERYINPUTWIDGET_H

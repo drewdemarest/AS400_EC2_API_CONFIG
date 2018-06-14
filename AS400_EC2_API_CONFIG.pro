@@ -31,8 +31,9 @@ SOURCES += \
     inputwidgets/queryinputwidgets/invoicequeryinputwidget.cpp \
     inputwidgets/queryinputwidgets/customerchainqueryinputwidget.cpp \
     inputwidgets/mysqlinputwidget.cpp \
-    json_settings/jsonsettings.cpp
-
+    json_settings/jsonsettings.cpp \
+    inputwidgets/queryinputwidgets/openorderheaderqueryinputwidget.cpp \
+    inputwidgets/queryinputwidgets/openorderdetailqueryinputwidget.cpp
 HEADERS += \
         mainwindow.h \
     inputwidgets/as400inputwidget.h \
@@ -40,7 +41,9 @@ HEADERS += \
     inputwidgets/queryinputwidgets/invoicequeryinputwidget.h \
     inputwidgets/queryinputwidgets/customerchainqueryinputwidget.h \
     inputwidgets/mysqlinputwidget.h \
-    json_settings/jsonsettings.h
+    json_settings/jsonsettings.h \
+    inputwidgets/queryinputwidgets/openorderheaderqueryinputwidget.h \
+    inputwidgets/queryinputwidgets/openorderdetailqueryinputwidget.h
 
 FORMS += \
         mainwindow.ui \
@@ -48,4 +51,6 @@ FORMS += \
     inputwidgets/importscheduleinputwidget.ui \
     inputwidgets/queryinputwidgets/invoicequeryinputwidget.ui \
     inputwidgets/queryinputwidgets/customerchainqueryinputwidget.ui \
-    inputwidgets/mysqlinputwidget.ui
+    inputwidgets/mysqlinputwidget.ui \
+    inputwidgets/queryinputwidgets/openorderheaderqueryinputwidget.ui \
+    inputwidgets/queryinputwidgets/openorderdetailqueryinputwidget.ui

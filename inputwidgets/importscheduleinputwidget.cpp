@@ -8,6 +8,8 @@ ImportScheduleInputWidget::ImportScheduleInputWidget(QWidget *parent) :
     ui->setupUi(this);
     ui->invoiceSettingsGrid->addWidget(invoiceInput);
     ui->customerChainSettingsGrid->addWidget(customerChainInput);
+    ui->openOrderHeaderSettingsGrid->addWidget(openOrderHeaderInput);
+    ui->openOrderDetailSettingsGrid->addWidget(openOrderDetailInput);
 }
 
 ImportScheduleInputWidget::~ImportScheduleInputWidget()

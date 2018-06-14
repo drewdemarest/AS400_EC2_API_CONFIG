@@ -1,20 +1,20 @@
-#ifndef CUSTOMERCHAINQUERYINPUTWIDGET_H
-#define CUSTOMERCHAINQUERYINPUTWIDGET_H
+#ifndef OPENORDERDETAILQUERYINPUTWIDGET_H
+#define OPENORDERDETAILQUERYINPUTWIDGET_H
 
 #include "json_settings/jsonsettings.h"
 #include <QWidget>
 
 namespace Ui {
-class CustomerChainQueryInputWidget;
+class OpenOrderDetailQueryInputWidget;
 }
 
-class CustomerChainQueryInputWidget : public QWidget
+class OpenOrderDetailQueryInputWidget : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit CustomerChainQueryInputWidget(QWidget *parent = 0);
-    ~CustomerChainQueryInputWidget();
+    explicit OpenOrderDetailQueryInputWidget(QWidget *parent = 0);
+    ~OpenOrderDetailQueryInputWidget();
 
 private slots:
     void dailyTimeImportCheckChanged(bool checked);
@@ -23,9 +23,9 @@ private slots:
     void loadSettings();
 
 private:
-    Ui::CustomerChainQueryInputWidget *ui;
+    Ui::OpenOrderDetailQueryInputWidget *ui;
     JsonSettings settings_;
-    QString dbPath_ = qApp->applicationDirPath() + "/custChainQuery.db";
+    QString dbPath_ = qApp->applicationDirPath() + "/openOrderDetailQuery.db";
     QJsonObject querySettings_ =    {{"millisecondInterval", QJsonValue()},
                                      {"dailyUploadTime",     QJsonValue()},
                                      {"chunkSize",           QJsonValue()},
@@ -33,4 +33,4 @@ private:
                                      {"usingUploadDaily",    QJsonValue()}};
 };
 
-#endif // CUSTOMERCHAINQUERYINPUTWIDGET_H
+#endif // OPENORDERDETAILQUERYINPUTWIDGET_H

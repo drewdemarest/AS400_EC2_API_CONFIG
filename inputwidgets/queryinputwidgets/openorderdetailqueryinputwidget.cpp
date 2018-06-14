@@ -1,15 +1,15 @@
-#include "customerchainqueryinputwidget.h"
-#include "ui_customerchainqueryinputwidget.h"
+#include "openorderdetailqueryinputwidget.h"
+#include "ui_openorderdetailqueryinputwidget.h"
 
-CustomerChainQueryInputWidget::CustomerChainQueryInputWidget(QWidget *parent) :
+OpenOrderDetailQueryInputWidget::OpenOrderDetailQueryInputWidget(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::CustomerChainQueryInputWidget)
+    ui(new Ui::OpenOrderDetailQueryInputWidget)
 {
     ui->setupUi(this);
-    connect(ui->importDailyCheckBox, &QCheckBox::toggled, this, &CustomerChainQueryInputWidget::dailyTimeImportCheckChanged);
-    connect(ui->importIntervalCheckBox, &QCheckBox::toggled, this, &CustomerChainQueryInputWidget::intervalImportCheckChanged);
-    connect(ui->commitSettingsButton, &QPushButton::pressed, this, &CustomerChainQueryInputWidget::saveSettings);
-    connect(ui->loadExistingSettingsButton, &QPushButton::pressed, this, &CustomerChainQueryInputWidget::loadSettings);
+    connect(ui->importDailyCheckBox, &QCheckBox::toggled, this, &OpenOrderDetailQueryInputWidget::dailyTimeImportCheckChanged);
+    connect(ui->importIntervalCheckBox, &QCheckBox::toggled, this, &OpenOrderDetailQueryInputWidget::intervalImportCheckChanged);
+    connect(ui->commitSettingsButton, &QPushButton::pressed, this, &OpenOrderDetailQueryInputWidget::saveSettings);
+    connect(ui->loadExistingSettingsButton, &QPushButton::pressed, this, &OpenOrderDetailQueryInputWidget::loadSettings);
 
     if(!ui->importIntervalCheckBox->isChecked() && !ui->importDailyCheckBox->isChecked())
     {
@@ -18,12 +18,12 @@ CustomerChainQueryInputWidget::CustomerChainQueryInputWidget(QWidget *parent) :
     }
 }
 
-CustomerChainQueryInputWidget::~CustomerChainQueryInputWidget()
+OpenOrderDetailQueryInputWidget::~OpenOrderDetailQueryInputWidget()
 {
     delete ui;
 }
 
-void CustomerChainQueryInputWidget::dailyTimeImportCheckChanged(bool checked)
+void OpenOrderDetailQueryInputWidget::dailyTimeImportCheckChanged(bool checked)
 {
  if(checked)
  {
@@ -44,7 +44,7 @@ void CustomerChainQueryInputWidget::dailyTimeImportCheckChanged(bool checked)
  }
 }
 
-void CustomerChainQueryInputWidget::intervalImportCheckChanged(bool checked)
+void OpenOrderDetailQueryInputWidget::intervalImportCheckChanged(bool checked)
 {
     if(checked)
     {
@@ -65,7 +65,7 @@ void CustomerChainQueryInputWidget::intervalImportCheckChanged(bool checked)
     }
 }
 
-void CustomerChainQueryInputWidget::saveSettings()
+void OpenOrderDetailQueryInputWidget::saveSettings()
 {
     querySettings_["millisecondInterval"]   = QString::number(ui->importIntervalSpinBox->value());
     querySettings_["dailyUploadTime"]       = ui->importTimeEdit->time().toString(Qt::ISODate);
@@ -76,7 +76,7 @@ void CustomerChainQueryInputWidget::saveSettings()
     settings_.saveSettings(QFile(dbPath_), querySettings_);
 }
 
-void CustomerChainQueryInputWidget::loadSettings()
+void OpenOrderDetailQueryInputWidget::loadSettings()
 {
     querySettings_ = settings_.loadSettings(QFile(dbPath_), querySettings_);
 
@@ -86,4 +86,3 @@ void CustomerChainQueryInputWidget::loadSettings()
     ui->importIntervalCheckBox->setChecked(querySettings_["usingUploadInterval"].toString().toInt());
     ui->importDailyCheckBox->setChecked(querySettings_["usingUploadDaily"].toString().toInt());
 }
-

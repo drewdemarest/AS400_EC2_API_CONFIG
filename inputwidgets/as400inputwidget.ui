@@ -14,27 +14,6 @@
    <string>Form</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="9" column="0">
-    <widget class="QPushButton" name="as400CommitSettings">
-     <property name="text">
-      <string>Commit Settings</string>
-     </property>
-    </widget>
-   </item>
-   <item row="7" column="0">
-    <widget class="QLabel" name="as400PasswordLabel">
-     <property name="text">
-      <string>AS400 Password</string>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="0">
-    <widget class="QLineEdit" name="as400DriverLineEdit">
-     <property name="text">
-      <string>iSeries Access ODBC Driver</string>
-     </property>
-    </widget>
-   </item>
    <item row="4" column="0">
     <widget class="QLineEdit" name="as400SystemLineEdit">
      <property name="text">
@@ -42,10 +21,31 @@
      </property>
     </widget>
    </item>
-   <item row="1" column="0">
-    <widget class="QLabel" name="as400DriverLabel">
+   <item row="0" column="0">
+    <widget class="QPushButton" name="as400LoadSettingsButton">
      <property name="text">
-      <string>AS400 ODBC Driver</string>
+      <string>Load Existing Settings</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="as400SystemLabel">
+     <property name="text">
+      <string>AS400 Hostname or IP</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0">
+    <widget class="QLabel" name="as400UsernameLabel">
+     <property name="text">
+      <string>AS400 Username</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0">
+    <widget class="QLineEdit" name="as400UsernameLineEdit">
+     <property name="text">
+      <string>Insert username here</string>
      </property>
     </widget>
    </item>
@@ -59,33 +59,46 @@
      </property>
     </widget>
    </item>
-   <item row="6" column="0">
-    <widget class="QLineEdit" name="as400UsernameLineEdit">
+   <item row="1" column="0">
+    <widget class="QLabel" name="as400DriverLabel">
      <property name="text">
-      <string>Insert username here</string>
+      <string>AS400 ODBC Driver</string>
      </property>
     </widget>
    </item>
-   <item row="5" column="0">
-    <widget class="QLabel" name="as400UsernameLabel">
+   <item row="2" column="0">
+    <widget class="QLineEdit" name="as400DriverLineEdit">
      <property name="text">
-      <string>AS400 Username</string>
+      <string>iSeries Access ODBC Driver</string>
      </property>
     </widget>
    </item>
-   <item row="3" column="0">
-    <widget class="QLabel" name="as400SystemLabel">
+   <item row="10" column="0">
+    <widget class="QPushButton" name="as400CommitSettings">
      <property name="text">
-      <string>AS400 Hostname or IP</string>
+      <string>Commit Settings</string>
      </property>
     </widget>
    </item>
-   <item row="0" column="0">
-    <widget class="QPushButton" name="as400LoadSettingsButton">
+   <item row="7" column="0">
+    <widget class="QLabel" name="as400PasswordLabel">
      <property name="text">
-      <string>Load Existing Settings</string>
+      <string>AS400 Password</string>
      </property>
     </widget>
+   </item>
+   <item row="9" column="0">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
    </item>
   </layout>
  </widget>
